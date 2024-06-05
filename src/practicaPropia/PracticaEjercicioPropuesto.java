@@ -11,10 +11,10 @@ public class PracticaEjercicioPropuesto {
     public static void main(String[] args) {
         PracticaEjercicioPropuesto iniciar = new PracticaEjercicioPropuesto();
         iniciar.ProfesorEstudiantes();
-        int codMenuPpal=0;
+        int MenuPpal=0;
 		do {
 			
-			String menu="MENU RESTAURANTE\n\n";
+			String menu="Menu del sistema\n\n";
 			menu+="1. Registrar Profesores \n";
 			menu+="2. Registrar Estudiantes\n";
 			menu+="3. Lista de Profesores y Estudiantes\n";
@@ -23,9 +23,9 @@ public class PracticaEjercicioPropuesto {
 			menu+="6. Consulta de Estudiante\n";
 			menu+="7. Salir\n\n";
 			menu+="Por favor Seleccione una opcion \n";
-			codMenuPpal=Integer.parseInt(JOptionPane.showInputDialog(menu));
+			MenuPpal=Integer.parseInt(JOptionPane.showInputDialog(menu));
 			
-			switch (codMenuPpal) {
+			switch (MenuPpal) {
 			case 1:
 				JOptionPane.showMessageDialog(null,"Registrar Profesores" );
 					iniciar.RegistrarProfesores();
