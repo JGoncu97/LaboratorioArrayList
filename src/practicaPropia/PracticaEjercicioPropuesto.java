@@ -221,6 +221,22 @@ public class PracticaEjercicioPropuesto {
         }
         System.out.println("Registro de estudiantes exitoso!!");
     }
+	/*Este metodo es para consultar  los profesores y estudiantes existente, al entrar en este metodo
+     * el nos enviara los profesores existente seguido de los estudiantes asociados a ese mismo proceso.
+     * 
+     * en este metodo inicializamos una lista interna como contenedor de la informacion 
+     * pero primero realizamos un ciclo donde le decimos que la condicion de parada va a ser iguales al tamaño del arreglo
+     * listaGeneralEstudiantes, con esto nos aseguramos que pase por cada uno de los conjuntos de estudiantes existentes
+     * dentro del ciclo le diremos que la lista que usaremos como contenedor de informacion sera el contenedor
+     * temporal y que este internamente tendra la listaGeneralEstudiante en la posicion " i " esto lo logramos utilizando el metodo .get, asi 
+     * nos aseguramos que el arrastre los datos especificos en el punto i y luego que imprima el profesor
+     * de la listProfesor en el punto " i " con el metodo .get, estas dos especificaciones del metodo .get 
+     * nos ayuda que el profesor y los estudiantes coincidad ya que ambos deberian estar en la misma posicion en la lista
+     * luego de que imprima el profesor , le decimos que con un ciclo  recorra la listaTemporal utilizando el metodo .size() 
+     * con este validamos de que el recorra los nombre en la lista temporal y vaya imprimiendo uno a uno cada nombre de esa lista
+     *  y dentro de ese ciclo utilizamos una condicion que diga que si la "x" es menor que la posicion de la lista temporal restado 1
+     *  imprima un separador que este caso seria " , " para darle espacio a cada nombre y queden de manera ordenada, y al finalizar le proceso imprima el cierre
+     *  de este con un parentesis y asi la impresion queda como un arreglo de nombre organizados*/
 
     private void consultarListasProfesoresYEstudiantes() {
         System.out.println("\n<<<Lista de Profesores y Estudiantes>>>\n");
@@ -240,7 +256,25 @@ public class PracticaEjercicioPropuesto {
         	System.out.print("]\n");
         }
     }
-    
+    /*Este metodo lo utilizamos para consultar las listas de estudiantes de un profesor especifico
+     * inicializamos un variable donde nos pregunte el nombre del profesor a consultar y asi obtener
+     * la lista de estudiantes de los cuales el profesor esta a cargo, al tomar el dato del Input
+     * utilizamos una condicion donde le pedimos con el metodo  .contains que recorra la lista verificando
+     * si contiene lo que ingreso el usuario en el input, luego de que acierte la condicion y entre
+     * inicializamos un variable llamada posicion y que dentro de esta variable tenga la lista de profesores con el metodo
+     * .indexOf que esto lo que hace es que busca la primera aparición de un elemento específico dentro de esa lista
+     * en este caso busca lo que se ingreso en el input " nombre "
+     * luego creamos una lista temporal para estudiantes y que este almacene loque que se encuentra en la lista
+     * general de estudiantes en el punto de "Posicion" utilizando el metodo .get 
+     * ya teniendo esto le indicamos que  imprima el nombre del profesor  seguido de la lista de estudiante
+     * pero esto lo hacemos con un ciclo que diga que recorra la cadena de estudiantes temporal, para que 
+     * el tamaño de la lista especifica segun la "posicion" y que dentro del ciclo cuando se realize esto,
+     * imprima los nombre de la listaTemporal en la posicion i, y que tenga condicion luego de imprimir
+     * que diga que si el valor de i es menor que la lista restado 1 imprima un separador que este 
+     * caso seria " , " para darle espacio a cada nombre y queden de manera ordenada, y al finalizar 
+     * el proceso imprima el cierre
+     *  de este con un parentesis y asi la impresion queda como un arreglo de nombre organizados
+     *  */
     private void consultarProfesor() {
     	System.out.print("\n<<<Consulta de Profesor >>>");
     	String nombre=JOptionPane.showInputDialog("Ingrese el nombre del profesor a consultar");
@@ -268,6 +302,27 @@ public class PracticaEjercicioPropuesto {
     		}
     		
     	}
+    /*Este metodo lo utilizamos para contar la cantidad de estudiantes que tiene cada profesor asignado
+     * 
+     * para esto inicializamos una variable para preguntar primeramente a que profesor le queremos consultar
+     * la cantidad de estudiantes asignado.
+     * con una condicion  utilizamos el metodo . contains validamos la existencia de ese profesor en
+     * la lista profesores , en el caso de que si exista entra en la condicion donde inicializamos una 
+     * variable llamada posicion que diga que dentro de esta variable tenga la lista profesores con el metodo
+     * .indexOf que esto lo que hace es que busca la primera aparición de un elemento específico dentro de esa lista
+     * en este caso busca lo que se ingreso en el input " nombre "
+     * 
+     * luego inicializamos una listaTemporal que contenga por dentro la lista general de estudiante
+     * y que arrastre la lista interna que esta en la posicion ("posicion"), utilizando 
+     * el metodo .get
+     * 
+     * ya habiendo realizado esto que nos imprima la cantidad de estudiantes asociados por el profesor 
+     * y que para que imprima la cantidad exacta , que llame la lista tempora con el metodo .size() para que asi imprima la suma 
+     * de las posiciones dentro de la lista
+     * 
+     * 
+     * En el caso de que no encuentre el nombre del profesor, imprima que no se encuentra el nombre de dicho profesor
+     * en los registros*/
     
     private void consultarEstudiantePorProfesor() {
     	System.out.print("\n<<< Consulta  cantidad de estudiantes  de profesores >>> \n");
@@ -284,7 +339,33 @@ public class PracticaEjercicioPropuesto {
     	}
     	
     }
-    
+/*Con este metodo podemos consultar un estudiante especifico y decir a que profesor se encuentra asignado
+     * 
+     * primeramente declaramos una arreglo temporal para trabajar en nuestro metodo
+     * 
+     * seguido inicializamos una variable para preguntarle al usuario el nombre del estudiante a consultar
+     * 
+     * luego de recibir esta informacion utilizamos un ciclo que pueda recorre la lista general de estudiante utilizando el metodo 
+     * .size()
+     * 
+     * luego internamente dentro de ese ciclo llamamos la lista temporal que creamos en la priemra instancia
+     * y le decimos que por dentro tendra el valor de la lista general en la posicion i con el metodo .get
+     * 
+     * luego que se encuentre en esa condicion utilizamos una condicion 
+     * que recorra ese arreglo temporal y verifique el contenido con el metodo .contains asi este valida se que 
+     * encuentre similitud lo que se encuentra en la lista con lo que se ingreso con el input
+     * en caso de que sea correcta la similitud utilizamos un ciclo dentro de la condicion verdadera
+     * que  recorra la lista temporal con el metodo .size() y dentro de ese ciclo
+     *  un condicion que valide que lo que esta en la posicion x de la lista temporal sea igual a lo
+     *  que se encuentra almacenado en la variable del input con el metodo .equalsIgnoreCase que ignora si esta en mayuscula
+     *  o en minuscula lo escrito, en el caso de que sean igual entre en la condicion
+     *   he imprima diciendonos que el nombre del estudiante pertenece a un profesor en la posicion i que deberia ser la misma posicion
+     *   que la lista temporal
+     *   
+     *   
+     *   en el caso de que no entre en la primera condicion realizada que este imprima
+     *   y le diga al usuario  que no se encuentra el nombre del estudiante en el grupo del profesor*/
+	
     private void consultarEstudiante() {
     	System.out.print("\n<<<Consulta de Estudiante >>>\n");
     	ArrayList<String> listaTemporal;
