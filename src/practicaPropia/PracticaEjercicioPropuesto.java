@@ -86,7 +86,7 @@ public class PracticaEjercicioPropuesto {
 				break;
 			
 			default:
-				JOptionPane.showMessageDialog(null,"No corresponde a un"
+				JOptionPane.showMessageDialog(null,"No corresponde a un "
 						+ "codigo valido","ADVERTENCIA",JOptionPane.WARNING_MESSAGE );
 				break;
 					
